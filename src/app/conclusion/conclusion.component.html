@@ -1,0 +1,43 @@
+<section id="conclusion">
+    <h2>Conclusion et Discussion</h2>
+    
+    <div class="slide-container">
+      <div *ngFor="let slide of slides; let i = index" class="slide" [class.active]="currentSlideIndex === i">
+        <h3>{{ slide.title }}</h3>
+        <p>{{ slide.content }}</p>
+        <ul *ngIf="slide.list.length">
+          <li *ngFor="let item of slide.list">{{ item }}</li>
+        </ul>
+      </div>
+      
+      <div class="buttons">
+        <button (click)="previousSlide()" [disabled]="currentSlideIndex === 0">Précédent</button>
+        <button (click)="nextSlide()" [disabled]="currentSlideIndex === slides.length - 1">Suivant</button>
+      </div>
+    </div>
+    
+    <!-- Conclusion Générale -->
+    <div class="general-conclusion">
+      <p>
+        Angular se présente comme une solution performante et flexible pour le développement d'applications web modernes. Grâce à son architecture modulaire, ses outils puissants et son support à long terme, il est adapté à tous les types de projets, de l'application simple au système d'entreprise complexe.
+      </p>
+    </div>
+    
+    <!-- Section de Remerciements avec Cartes d'Info Membres -->
+    <div class="team-cards">
+      <h3>Les Membres de l'Équipe</h3>
+      <div class="card-container">
+        <div class="card" *ngFor="let member of teamMembers">
+          <h4>{{ member.name }}</h4>
+          <p><strong>Rôle:</strong> {{ member.role }}</p>
+          <p><strong>Contact:</strong> {{ member.contact }}</p>
+          <p><strong>Bio:</strong> {{ member.bio }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <footer>
+      <p>Merci de votre attention!</p>
+    </footer>
+  </section>
+  

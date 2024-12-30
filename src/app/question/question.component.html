@@ -1,0 +1,12 @@
+<div class="question">
+    <h3>Question {{ questionNumber }} : {{ data.questionText }}</h3>
+    <div *ngFor="let option of data.options">
+      <input
+        type="radio"
+        name="question{{ questionNumber }}"
+        [value]="option"
+        (change)="onOptionSelected(option)">
+      {{ option }}
+    </div>
+  </div>
+  

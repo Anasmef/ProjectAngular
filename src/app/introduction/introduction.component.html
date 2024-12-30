@@ -1,0 +1,61 @@
+<!-- <div class="container">
+    <h1>Angular : Historique et Définition</h1>
+    
+    <section class="definition">
+      <h2>Qu'est-ce qu'Angular ?</h2>
+      <p>
+        Angular est un framework JavaScript open-source développé par Google. Il est conçu pour construire des applications web modernes, dynamiques et riches grâce à son approche basée sur des composants. 
+        Angular repose sur TypeScript pour fournir un code plus robuste et maintenable.
+      </p>
+    </section>
+    
+    <section class="history">
+      <h2>Historique d'Angular</h2>
+      <p>Le parcours d'Angular débute avec AngularJS (version 1) avant une réécriture complète qui a donné naissance à Angular 2 et ses versions suivantes.</p>
+      <ul>
+        <li><strong>2010 :</strong> Lancement d'AngularJS (version 1), un framework JavaScript basé sur MVC.</li>
+        <li><strong>2016 :</strong> Sortie d'Angular 2, une refonte totale utilisant TypeScript et une architecture basée sur les composants.</li>
+        <li><strong>2017 :</strong> Angular 4 introduit des optimisations et une meilleure compatibilité rétroactive.</li>
+        <li><strong>2018 :</strong> Angular 6 intègre Angular CLI avec de nouvelles fonctionnalités comme Angular Elements.</li>
+        <li><strong>2020 :</strong> Angular 10 met l'accent sur l'amélioration de l'expérience développeur.</li>
+        <li><strong>2023 :</strong> Angular continue d'évoluer avec Angular 16, intégrant des outils avancés pour des performances optimales.</li>
+      </ul>
+    </section>
+    
+    <section class="features">
+      <h2>Principales Caractéristiques</h2>
+      <ul>
+        <li><strong>Modularité :</strong> Architecture basée sur des modules pour une meilleure organisation du code.</li>
+        <li><strong>TypeScript :</strong> Permet un typage statique et un développement plus robuste.</li>
+        <li><strong>Binding bidirectionnel :</strong> Synchronisation automatique entre l'interface utilisateur et les données.</li>
+        <li><strong>Outils Intégrés :</strong> Angular CLI, RxJS pour la gestion des flux de données asynchrones.</li>
+      </ul>
+    </section>
+  </div>
+   -->
+   <div class="slide">
+    <div class="slide-content">
+      <h1 class="slide-title">{{ slides[currentSlideIndex].title }}</h1>
+  
+      <!-- Afficher le contenu de texte de la diapositive -->
+      <p class="slide-text" *ngIf="slides[currentSlideIndex].content">
+        {{ slides[currentSlideIndex].content }}
+      </p>
+  
+      <!-- Afficher une liste si disponible -->
+      <ul class="slide-list" *ngIf="slides[currentSlideIndex].list && slides[currentSlideIndex].list.length > 0">
+        <li *ngFor="let item of slides[currentSlideIndex].list">{{ item }}</li>
+      </ul>
+  
+      <!-- Boutons de navigation -->
+      <div class="navigation">
+        <button class="navigation-btn" (click)="previousSlide()" [disabled]="currentSlideIndex === 0">
+          Précédent
+        </button>
+        <button class="navigation-btn" (click)="nextSlide()" [disabled]="currentSlideIndex === slides.length - 1">
+          Suivant
+        </button>
+      </div>
+    </div>
+  </div>
+  
